@@ -1,0 +1,23 @@
+{
+    "aManagerApp": {
+        "set" : {
+            "home": {
+                "title": "Sets",
+                "createLabel": "Kreiraj novi Set",
+                "createOrEditLabel": "Kreirajte ili izmenite Set"
+            },
+            "created": "Kreiran je novi Set pod nazivom {{ param }}",
+            "updated": "Set pod nazivom {{ param }} je ažuriran",
+            "deleted": "Set pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Set pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Set"
+            },
+            "title": "Title",
+            "content": "Content",
+            "cardset": "Cardset"
+        }
+    }
+}

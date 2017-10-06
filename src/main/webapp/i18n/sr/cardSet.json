@@ -1,0 +1,23 @@
+{
+    "aManagerApp": {
+        "cardSet" : {
+            "home": {
+                "title": "Card Sets",
+                "createLabel": "Kreiraj novi Card Set",
+                "createOrEditLabel": "Kreirajte ili izmenite Card Set"
+            },
+            "created": "Kreiran je novi Card Set pod nazivom {{ param }}",
+            "updated": "Card Set pod nazivom {{ param }} je ažuriran",
+            "deleted": "Card Set pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Card Set pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Card Set"
+            },
+            "name": "Name",
+            "description": "Description",
+            "user": "User"
+        }
+    }
+}

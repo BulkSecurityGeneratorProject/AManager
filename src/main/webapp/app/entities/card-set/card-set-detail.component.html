@@ -1,0 +1,75 @@
+
+<div *ngIf="cardSet">
+    <h2><span jhiTranslate="aManagerApp.cardSet.detail.title">Card Set</span> {{cardSet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="aManagerApp.cardSet.name">Name</span></dt>
+        <dd>
+            <span>{{cardSet.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="aManagerApp.cardSet.description">Description</span></dt>
+        <dd>
+            <span>{{cardSet.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="aManagerApp.cardSet.user">User</span></dt>
+        <dd>
+            {{cardSet.user?.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'card-set/'+ cardSet.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+
+    <button class="btn btn-primary float-right jh-create-entity create-set" [routerLink]="['/', { outlets: { popup: 'set-new/'+ cardSet.id } }]">
+        <span class="fa fa-plus"></span>
+        <span  jhiTranslate="aManagerApp.set.home.createLabel">
+            Create new Set
+            </span>
+    </button>
+    <div class="table-responsive" *ngIf="sets">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+                <th jhiSortBy="title"><span jhiTranslate="aManagerApp.set.title">Title</span> <span class="fa fa-sort"></span></th>
+                <th jhiSortBy="content"><span jhiTranslate="aManagerApp.set.content">Content</span> <span class="fa fa-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let set of sets ;trackBy: trackId">
+                <td>{{set.title}}</td>
+                <td>{{set.content}}</td>
+                <tdyo class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'set/'+ set.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'set/'+ set.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </tdyo>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

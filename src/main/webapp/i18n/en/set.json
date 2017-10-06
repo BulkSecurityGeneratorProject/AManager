@@ -1,0 +1,23 @@
+{
+    "aManagerApp": {
+        "set" : {
+            "home": {
+                "title": "Sets",
+                "createLabel": "Create a new Set",
+                "createOrEditLabel": "Create or edit a Set"
+            },
+            "created": "A new Set is created with identifier {{ param }}",
+            "updated": "A Set is updated with identifier {{ param }}",
+            "deleted": "A Set is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Set {{ id }}?"
+            },
+            "detail": {
+                "title": "Set"
+            },
+            "title": "Title",
+            "content": "Content",
+            "cardset": "Cardset"
+        }
+    }
+}
