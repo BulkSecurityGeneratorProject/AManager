@@ -50,7 +50,7 @@
             <tr *ngFor="let set of sets ;trackBy: trackId">
                 <td>{{set.title}}</td>
                 <td>{{set.content}}</td>
-                <tdyo class="text-right">
+                <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'set/'+ set.id + '/edit'} }]"
@@ -67,7 +67,7 @@
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </div>
-                </tdyo>
+                </td>
             </tr>
             </tbody>
         </table>

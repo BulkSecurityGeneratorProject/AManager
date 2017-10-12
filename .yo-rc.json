@@ -37,6 +37,7 @@
     "languages": [
       "en",
       "sr"
-    ]
+    ],
+    "herokuAppName": "a-manager"
   }
 }
